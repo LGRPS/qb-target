@@ -49,7 +49,54 @@ Config.PolyZones = {
 }
 
 Config.TargetBones = {
-
+    ["main"] = {
+        bones = {
+            "seat_dside_f",
+            "seat_pside_f",
+            "seat_dside_r",
+            "seat_pside_r",
+            "door_dside_f",
+            "door_dside_r",
+            "door_pside_f",
+            "door_pside_r",
+            "bodyshell",
+        },
+        options = {
+            {
+                type = "client",
+                event = "police:client:PutPlayerInVehicle",
+                icon = "fas fa-user-plus",
+                label = "Seat in Vehicle",
+            },
+            {
+                type = "client",
+                event = "police:client:SetPlayerOutVehicle",
+                icon = "fas fa-user-minus",
+                label = "Take out Vehicle",
+            },
+            {
+                type = "client",
+                event = "police:client:depot",
+                icon = "fas fa-truck-moving",
+                label = "Impound Vehicle",
+                job = "police",
+            },
+            {
+                type = "client",
+                event = "FlipVehicle",
+                label = 'Flip Vehicle',
+                icon = 'fas fa-chevron-circle-up',
+            },
+            {
+                type = "client",
+                event = "LegacyFuel:client:fuel",
+                icon = "fas fa-gas-pump",
+                label = "Refuel Car",
+                item = 'weapon_petrolcan',
+            },
+        },
+        distance = 2.5
+    }
 }
 
 Config.TargetEntities = {
@@ -57,7 +104,63 @@ Config.TargetEntities = {
 }
 
 Config.TargetModels = {
-
+	--BURGERSHOT GARAGE
+	["burgershotgarage"] = {
+		models = {
+			"ig_floyd"
+		},
+		options = {
+			{
+				type = "client",
+				event = "garage:BurgerShotGarage",
+				icon = "fas fa-car",
+				label = "BurgerShot Garage",
+				job = "burgershot",
+			}
+		},
+		distance = 2.5,
+	},
+	--ATMs
+	["atms"] = {
+        models = {
+            'prop_atm_01',
+            'prop_atm_02',
+            'prop_atm_03',
+            'prop_fleeca_atm',
+        },
+        options = {
+            {
+                type = "command",
+                event = "atm",
+                icon = "fab fa-credit-card",
+                label = "Insert Card",
+            },
+        },
+        distance = 1.0
+    },
+	--DUMPSTERS
+	["Dumpsters"] = {
+        models = {
+            "prop_snow_dumpster_01",
+            "prop_dumpster_4a",
+            "prop_cs_dumpster_01a",
+            "p_dumpster_t",
+            "prop_dumpster_3a",
+            "prop_dumpster_4b",
+            "prop_dumpster_01a",
+            "prop_dumpster_02b",
+            "prop_dumpster_02a",
+        },
+        options = {
+            {
+                type = "client",
+                event = "qb-dumpster:client:eye",
+                icon = "fas fa-dumpster",
+                label = "SEARCH DUMPSTER",
+            },
+        },
+        distance = 4.0
+    },
 }
 
 Config.GlobalPedOptions = {
